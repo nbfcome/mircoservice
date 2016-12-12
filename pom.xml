@@ -11,6 +11,7 @@
 	<modules>
 		<module>service-user</module>
 		<module>service-common</module>
+		<module>service-config</module>
 	</modules>
 
 	<parent>
