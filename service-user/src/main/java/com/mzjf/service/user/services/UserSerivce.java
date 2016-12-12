@@ -8,6 +8,7 @@ import org.springframework.util.CollectionUtils;
 
 import com.mzjf.service.user.dao.UserDao;
 import com.mzjf.service.user.entity.UserEntity;
+import com.mzjf.service.user.model.UserSpec;
 
 @Component
 public class UserSerivce {
@@ -24,6 +25,12 @@ public class UserSerivce {
             return userEntity;
         }
         return users.get(0);
+    }
+
+    public void add(UserSpec userSpec) {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setName(userSpec.getName());
+        this.userDao.add(userEntity);
     }
 
 }
