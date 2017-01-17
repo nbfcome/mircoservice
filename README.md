@@ -4,6 +4,23 @@
 - [Spring Boot Reference Guide](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 - [Test](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html)
 
+### Coverage Report
+- Execute `mvn cobertura:cobertura -Dcobertura.report.format=html` at console.
+- See the detailed coverage report in the folder of each sub project. The path of the report folder is  `subproject:target/site/`
+
+### Swagger UI
+- Reference: [Integrating Swagger into a Spring Boot RESTful Webservice with Springfox](http://www.hascode.com/2015/07/integrating-swagger-into-a-spring-boot-restful-webservice-with-springfox/)
+- Access Swagger UI at: http://localhost:8080/swagger-ui.html
+- Use @ApiIgnore and @ApiInclude to control what apis are included or ignored. It provides fine grained control over whats included or excluded. It works on a method level.By default everything is marked as included unless it is excluded. 
+
+### Code Style
+- Eclipse -> Preferences -> Java -> Code Style -> Formatter -> Import  microservice/eclipse-java-style.xml
+- In Eclipse, in the Package Explorer, right-click on the top-level package of the project. Choose Source > Organize Imports, and you're done, for all the files in your project.
+
+### TestNG
+- Go to Eclipse -> Help -> Eclipse Marketplace.
+- Find "TestNG", and install.
+
 ### Running the Examples
 
 To follow the simple Spring Boot example (project name:test-demo):
@@ -85,19 +102,3 @@ applications:
 - `cf push -f manifest.yml`
 -  the `SOME_NAME_YOU_MAKEUP_HERE` is arbitrary; it'll inform the URL that's used to mount the application and as such it shares a shared global (DNS) namespace
 
-### Coverage Report
-- Execute `mvn cobertura:cobertura -Dcobertura.report.format=html` at console.
-- See the detailed coverage report in the folder of each sub project. The path of the report folder is  `subproject:target/site/`
-
-### Swagger UI
-- Reference: [Integrating Swagger into a Spring Boot RESTful Webservice with Springfox](http://www.hascode.com/2015/07/integrating-swagger-into-a-spring-boot-restful-webservice-with-springfox/)
-- Access Swagger UI at: http://localhost:8080/swagger-ui.html
-- Use @ApiIgnore and @ApiInclude to control what apis are included or ignored. It provides fine grained control over whats included or excluded. It works on a method level.By default everything is marked as included unless it is excluded. 
-
-### Code Style
-- Eclipse -> Preferences -> Java -> Code Style -> Formatter -> Import  microservice/eclipse-java-style.xml
-- In Eclipse, in the Package Explorer, right-click on the top-level package of the project. Choose Source > Organize Imports, and you're done, for all the files in your project.
-
-### TestNG
-- Go to Eclipse -> Help -> Eclipse Marketplace.
-- Find "TestNG", and install.
