@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: service-eureka
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: service-eureka         # 指定该Eureka实例的主机名
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
