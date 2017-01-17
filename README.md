@@ -1,15 +1,8 @@
-# Huami Spring Cloud HOL
-
-## Prerequisites
-
 ### Develop
 - [Git](http://git-scm.com/downloads)
 - [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Spring Boot Reference Guide](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 - [Test](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html)
-
-### Deploy and Manage
-- use cf(Cloud Foundry) in xiaomi cloud
 
 ### Running the Examples
 
@@ -60,18 +53,18 @@ Authenticating...
 OK
 
 Select an org (or press enter to skip):
-1. org-shouhuan-test
-2. org-shouhuan
+1. org-xxx-test
+2. org-xxx
 
 Org> 1
-Targeted org org-shouhuan-test
+Targeted org org-xxx-test
 
 Targeted space space-devtest1
 
 
 API endpoint:   https://api.run.test.io
 User:           MY_EMAIL@HOST.com
-Org:            org-shouhuan-test
+Org:            org-xxx-test
 Space:          space-devtest1
 
 ```
@@ -84,7 +77,7 @@ applications:
   instances: 1
   disk_quota: 2048m
   host: test-demo
-  domain: mi-ae.cn
+  domain: xxx.cn
   path: ./target/test-demo-0.1.0.jar
   stack: cflinuxfs2
   buildpack: java_buildpack_new
@@ -102,7 +95,7 @@ applications:
 - Use @ApiIgnore and @ApiInclude to control what apis are included or ignored. It provides fine grained control over whats included or excluded. It works on a method level.By default everything is marked as included unless it is excluded. 
 
 ### Code Style
-- Eclipse -> Preferences -> Java -> Code Style -> Formatter -> Import  huami-spring-cloud/eclipse-java-style.xml
+- Eclipse -> Preferences -> Java -> Code Style -> Formatter -> Import  microservice/eclipse-java-style.xml
 - In Eclipse, in the Package Explorer, right-click on the top-level package of the project. Choose Source > Organize Imports, and you're done, for all the files in your project.
 
 ### TestNG
