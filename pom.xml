@@ -9,6 +9,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>service-spark</module>
 		<module>service-temp</module>
 		<module>service-user</module>
 		<module>service-product</module>

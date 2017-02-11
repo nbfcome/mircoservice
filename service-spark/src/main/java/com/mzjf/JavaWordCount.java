@@ -20,9 +20,9 @@ public final class JavaWordCount {
     @SuppressWarnings("resource")
     public static void main(String[] args) throws Exception {
 
-        String filePath = "~/soft/spark-1.4.0-bin-hadoop2.4/README.md";
-        SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("JavaWordCount");
-        JavaSparkContext ctx = new JavaSparkContext(sparkConf);
+        String filePath = "/home/nbfcome/soft/spark-1.4.0-bin-hadoop2.4/README.md";
+        JavaSparkContext ctx = new JavaSparkContext(new SparkConf().setMaster("local").setAppName(
+                "JavaWordCount"));
         JavaRDD<String> lines = ctx.textFile(filePath, 1);
 
         JavaRDD<String> words = lines.flatMap(s -> Arrays.asList(SPACE.split(s)));
