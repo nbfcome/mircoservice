@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017-2018 , Inc. All Rights Reserved.
  */
-package com.mzjf.temp.entity;
+package com.mzjf.common.service.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,9 +11,9 @@ import java.util.Objects;
 * @author niebiaofei
 *
 */
-public class ContentPraise implements Serializable {
+public class ContentShare implements Serializable {
 
-    private static final long serialVersionUID = -279493450844444308L;
+    private static final long serialVersionUID = 4513015571775283814L;
 
     private long id;
 
@@ -25,13 +25,11 @@ public class ContentPraise implements Serializable {
 
     private String status;
 
-    private Date updateTime;
-
     private String userIcon;
 
     private long userId;
 
-    public ContentPraise() {
+    public ContentShare() {
     }
 
     public long getId() {
@@ -74,14 +72,6 @@ public class ContentPraise implements Serializable {
         this.status = status;
     }
 
-    public Date getUpdateTime() {
-        return this.updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
     public String getUserIcon() {
         return this.userIcon;
     }
@@ -107,13 +97,12 @@ public class ContentPraise implements Serializable {
             return false;
         }
 
-        ContentPraise other = (ContentPraise) o;
+        ContentShare other = (ContentShare) o;
 
         return Objects.equals(this.getContentId(), other.getContentId())
                 && Objects.equals(this.getCreateTime(), other.getCreateTime())
                 && Objects.equals(this.getNickName(), other.getNickName())
                 && Objects.equals(this.getStatus(), other.getStatus())
-                && Objects.equals(this.getUpdateTime(), other.getUpdateTime())
                 && Objects.equals(this.getUserIcon(), other.getUserIcon())
                 && Objects.equals(this.getUserId(), other.getUserId())
                 && Objects.equals(this.getId(), other.getId());
@@ -122,8 +111,7 @@ public class ContentPraise implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(this.getContentId(), this.getCreateTime(), this.getNickName(),
-                this.getStatus(), this.getUpdateTime(), this.getUserIcon(), this.getUserId(),
-                this.getId());
+                this.getStatus(), this.getUserIcon(), this.getUserId(), this.getId());
     }
 
     @Override
@@ -133,11 +121,9 @@ public class ContentPraise implements Serializable {
                 .add("createTime", this.getCreateTime())
                 .add("nickName", this.getNickName())
                 .add("status", this.getStatus())
-                .add("updateTime", this.getUpdateTime())
                 .add("userIcon", this.getUserIcon())
                 .add("userId", this.getUserId())
                 .add("id", this.getId())
                 .toString();
     }
-
 }

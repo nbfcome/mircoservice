@@ -14,13 +14,13 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.mzjf.temp.entity.Comment;
-import com.mzjf.temp.entity.CommentPraise;
+import com.mzjf.common.service.entity.Comment;
+import com.mzjf.common.service.entity.CommentPraise;
 
 @Mapper
 public interface CommentPraiseDao {
 
-    
+
     @Select("select * from comment where id = #{id}")
     public List<CommentPraise> scan(@Param("id") Long id);
 

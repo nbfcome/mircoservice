@@ -21,6 +21,13 @@
 - Eclipse -> Preferences -> Java -> Code Style -> Formatter -> Import  microservice/eclipse-java-style.xml
 - In Eclipse, in the Package Explorer, right-click on the top-level package of the project. Choose Source > Organize Imports, and you're done, for all the files in your project.
 
+### idea code style
+下载EclipseCodeFormat 插件安装,重启导入eclipse-java-style.xml配置
+ieda:eclipse-java-style.xml
+
+### show symbol
+- Eclipse->window->Preferences->General->Editors->Text Editors->show whitespace characters(configure visibility)
+
 ### TestNG
 - Go to Eclipse -> Help -> Eclipse Marketplace.
 - Find "TestNG", and install.

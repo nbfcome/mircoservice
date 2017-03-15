@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017-2018 , Inc. All Rights Reserved.
  */
-package com.mzjf.temp.entity;
+package com.mzjf.common.service.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,19 +11,21 @@ import java.util.Objects;
 * @author niebiaofei
 *
 */
-public class Score implements Serializable {
+public class Fans implements Serializable {
 
-    private static final long serialVersionUID = -1295363901707866710L;
+    private static final long serialVersionUID = -8659454289287175537L;
 
     private long userId;
 
-    private long count;
+    private long fansId;
 
     private Date createTime;
 
+    private String status;
+
     private Date updateTime;
 
-    public Score() {
+    public Fans() {
     }
 
     public long getUserId() {
@@ -34,12 +36,12 @@ public class Score implements Serializable {
         this.userId = userId;
     }
 
-    public long getCount() {
-        return this.count;
+    public long getFansId() {
+        return this.fansId;
     }
 
-    public void setCount(long count) {
-        this.count = count;
+    public void setFansId(long fansId) {
+        this.fansId = fansId;
     }
 
     public Date getCreateTime() {
@@ -48,6 +50,14 @@ public class Score implements Serializable {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Date getUpdateTime() {
@@ -67,26 +77,28 @@ public class Score implements Serializable {
             return false;
         }
 
-        Score other = (Score) o;
+        Fans other = (Fans) o;
 
         return Objects.equals(this.getUserId(), other.getUserId())
-                && Objects.equals(this.getCount(), other.getCount())
+                && Objects.equals(this.getFansId(), other.getFansId())
                 && Objects.equals(this.getCreateTime(), other.getCreateTime())
+                && Objects.equals(this.getStatus(), other.getStatus())
                 && Objects.equals(this.getUpdateTime(), other.getUpdateTime());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getUserId(), this.getCount(), this.getCreateTime(),
-                this.getUpdateTime());
+        return Objects.hash(this.getUserId(), this.getFansId(), this.getCreateTime(),
+                this.getStatus(), this.getUpdateTime());
     }
 
     @Override
     public String toString() {
         return com.google.common.base.MoreObjects.toStringHelper(this)
                 .add("userId", this.getUserId())
-                .add("count", this.getCount())
+                .add("fansId", this.getFansId())
                 .add("createTime", this.getCreateTime())
+                .add("status", this.getStatus())
                 .add("updateTime", this.getUpdateTime())
                 .toString();
     }

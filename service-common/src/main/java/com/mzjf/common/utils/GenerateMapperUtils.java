@@ -56,7 +56,7 @@ public class GenerateMapperUtils {
         StringBuffer filedsStringBuffer = new StringBuffer();
         StringBuffer fieldsValueStringBuffer = new StringBuffer();
         for (Field field : fields) {
-            if (!isStatic(field.getModifiers()) && isStatic(field.getModifiers())) {
+            if (!isStatic(field.getModifiers()) && isPrivate(field.getModifiers())) {
                 filedsStringBuffer.append(field.getName()).append(", ");
                 fieldsValueStringBuffer.append("#{").append(var).append(".").append(field.getName()).append("},");
             }
