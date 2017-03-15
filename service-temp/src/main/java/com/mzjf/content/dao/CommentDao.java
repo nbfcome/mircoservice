@@ -14,16 +14,22 @@ import org.apache.ibatis.annotations.Update;
 
 import com.mzjf.common.service.entity.content.Comment;
 
+/**
+ * @author niebiaofei
+ *
+ */
 @Mapper
 public interface CommentDao {
 
-    @Select("select * from comment where id = #{id}")
-    public List<Comment> getCommentById(@Param("id") Long id);
+    @Select("select id, comment, commentedId, contentId, createTime, nickName, pics, praiseCount"
+            + ", status, updateTime, userIcon, userId from comment where id = #{id}")
+    public List<Comment> scan(@Param("id") Long id);
 
-    @Select("select * from comment where userId = #{userId}")
-    public List<Comment> scan(@Param("userId") Long userId);
-
-    @Insert("insert into comment(name) values (#{comment.name})")
+    @Insert("insert into comment(id, comment, commentedId, contentId, createTime, nickName, pics"
+            + ", praiseCount, status, updateTime, userIcon, userId) "
+            + "values (#{comment.id},#{comment.comment},#{comment.commentedId},#{comment.contentId}"
+            + ",#{comment.createTime},#{comment.nickName},#{comment.pics},#{comment.praiseCount}"
+            + ",#{comment.status},#{comment.updateTime},#{comment.userIcon},#{comment.userId},)")
     public long add(@Param("comment") Comment comment);
 
     @Update("update comment set status = #{comment.status} where id = #{comment.id} ")

@@ -1,9 +1,16 @@
+/*
+ * Copyright (c) 2017-2018 , Inc. All Rights Reserved.
+ */
 package com.mzjf.common.utils;
 
 import java.lang.reflect.Method;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * @author niebiaofei
+ *
+ */
 public class GenerateFuncUtils {
 
     public static <T> void generateEquals(Class<T> clazz) {
@@ -27,6 +34,7 @@ public class GenerateFuncUtils {
         }
         stringBuffer.replace(stringBuffer.length() - 2, stringBuffer.length() - 0, ";")
                 .append("\n    ").append("}").append("\n");
+        
         System.out.println(stringBuffer.toString());
     }
 
@@ -43,6 +51,7 @@ public class GenerateFuncUtils {
         }
         stringBuffer.replace(stringBuffer.length() - 2, stringBuffer.length() - 0, ");")
                 .append("\n    ").append("}").append("\n");
+        
         System.out.println(stringBuffer.toString());
     }
 
@@ -73,6 +82,7 @@ public class GenerateFuncUtils {
         }
         stringBuffer.append("\n").append("                .toString()").append(";\n")
                 .append("    }\n");
+        
         System.out.println(stringBuffer.toString());
     }
 
