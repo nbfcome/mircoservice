@@ -6,8 +6,8 @@ package com.mzjf.common.utils;
 import java.util.Arrays;
 import java.util.List;
 
-import com.mzjf.common.service.entity.CommentPraise;
-import com.mzjf.common.service.entity.Content;
+import com.mzjf.common.service.entity.content.CommentPraise;
+import com.mzjf.common.service.entity.content.Content;
 
 
 /**
