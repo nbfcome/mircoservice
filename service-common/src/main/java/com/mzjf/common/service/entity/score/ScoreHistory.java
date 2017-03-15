@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017-2018 , Inc. All Rights Reserved.
  */
-package com.mzjf.common.service.entity;
+package com.mzjf.common.service.entity.score;
 
 import java.io.Serializable;
 import java.util.Date;

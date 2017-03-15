@@ -2,7 +2,7 @@
  * Copyright (c) 2017-2018 XXX, Inc. All Rights Reserved.
  */
 
-package com.mzjf.temp.dao;
+package com.mzjf.content.dao;
 
 import java.util.List;
 
@@ -12,13 +12,16 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.mzjf.common.service.entity.Comment;
+import com.mzjf.common.service.entity.content.Comment;
 
 @Mapper
 public interface CommentDao {
 
     @Select("select * from comment where id = #{id}")
     public List<Comment> getCommentById(@Param("id") Long id);
+
+    @Select("select * from comment where userId = #{userId}")
+    public List<Comment> scan(@Param("userId") Long userId);
 
     @Insert("insert into comment(name) values (#{comment.name})")
     public long add(@Param("comment") Comment comment);

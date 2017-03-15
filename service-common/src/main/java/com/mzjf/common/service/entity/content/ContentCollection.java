@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017-2018 , Inc. All Rights Reserved.
  */
-package com.mzjf.common.service.entity;
+package com.mzjf.common.service.entity.content;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,13 +11,11 @@ import java.util.Objects;
 * @author niebiaofei
 *
 */
-public class CommentPraise implements Serializable {
+public class ContentCollection implements Serializable {
 
-    private static final long serialVersionUID = 295778790962405124L;
+    private static final long serialVersionUID = 251513277570906484L;
 
     private long id;
-
-    private long commentId;
 
     private long contentId;
 
@@ -33,7 +31,7 @@ public class CommentPraise implements Serializable {
 
     private long userId;
 
-    public CommentPraise() {
+    public ContentCollection() {
     }
 
     public long getId() {
@@ -42,14 +40,6 @@ public class CommentPraise implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getCommentId() {
-        return this.commentId;
-    }
-
-    public void setCommentId(long commentId) {
-        this.commentId = commentId;
     }
 
     public long getContentId() {
@@ -117,10 +107,9 @@ public class CommentPraise implements Serializable {
             return false;
         }
 
-        CommentPraise other = (CommentPraise) o;
+        ContentCollection other = (ContentCollection) o;
 
-        return Objects.equals(this.getCommentId(), other.getCommentId())
-                && Objects.equals(this.getContentId(), other.getContentId())
+        return Objects.equals(this.getContentId(), other.getContentId())
                 && Objects.equals(this.getCreateTime(), other.getCreateTime())
                 && Objects.equals(this.getNickName(), other.getNickName())
                 && Objects.equals(this.getStatus(), other.getStatus())
@@ -132,15 +121,14 @@ public class CommentPraise implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getCommentId(), this.getContentId(), this.getCreateTime(),
-                this.getNickName(), this.getStatus(), this.getUpdateTime(), this.getUserIcon(),
-                this.getUserId(), this.getId());
+        return Objects.hash(this.getContentId(), this.getCreateTime(), this.getNickName(),
+                this.getStatus(), this.getUpdateTime(), this.getUserIcon(), this.getUserId(),
+                this.getId());
     }
 
     @Override
     public String toString() {
         return com.google.common.base.MoreObjects.toStringHelper(this)
-                .add("commentId", this.getCommentId())
                 .add("contentId", this.getContentId())
                 .add("createTime", this.getCreateTime())
                 .add("nickName", this.getNickName())

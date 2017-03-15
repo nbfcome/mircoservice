@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2017-2018 , Inc. All Rights Reserved.
  */
-package com.mzjf.common.service.entity;
+package com.mzjf.common.service.entity.content;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,11 +11,15 @@ import java.util.Objects;
 * @author niebiaofei
 *
 */
-public class ContentShare implements Serializable {
+public class Comment implements Serializable {
 
-    private static final long serialVersionUID = 4513015571775283814L;
+    private static final long serialVersionUID = 3705244616781753918L;
 
     private long id;
+
+    private String comment;
+
+    private long commentedId;
 
     private long contentId;
 
@@ -23,13 +27,19 @@ public class ContentShare implements Serializable {
 
     private String nickName;
 
+    private String pics;
+
+    private long praiseCount;
+
     private String status;
+
+    private Date updateTime;
 
     private String userIcon;
 
     private long userId;
 
-    public ContentShare() {
+    public Comment() {
     }
 
     public long getId() {
@@ -38,6 +48,22 @@ public class ContentShare implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public long getCommentedId() {
+        return this.commentedId;
+    }
+
+    public void setCommentedId(long commentedId) {
+        this.commentedId = commentedId;
     }
 
     public long getContentId() {
@@ -64,12 +90,36 @@ public class ContentShare implements Serializable {
         this.nickName = nickName;
     }
 
+    public String getPics() {
+        return this.pics;
+    }
+
+    public void setPics(String pics) {
+        this.pics = pics;
+    }
+
+    public long getPraiseCount() {
+        return this.praiseCount;
+    }
+
+    public void setPraiseCount(long praiseCount) {
+        this.praiseCount = praiseCount;
+    }
+
     public String getStatus() {
         return this.status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Date getUpdateTime() {
+        return this.updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     public String getUserIcon() {
@@ -97,12 +147,17 @@ public class ContentShare implements Serializable {
             return false;
         }
 
-        ContentShare other = (ContentShare) o;
+        Comment other = (Comment) o;
 
-        return Objects.equals(this.getContentId(), other.getContentId())
+        return Objects.equals(this.getComment(), other.getComment())
+                && Objects.equals(this.getCommentedId(), other.getCommentedId())
+                && Objects.equals(this.getContentId(), other.getContentId())
                 && Objects.equals(this.getCreateTime(), other.getCreateTime())
                 && Objects.equals(this.getNickName(), other.getNickName())
+                && Objects.equals(this.getPics(), other.getPics())
+                && Objects.equals(this.getPraiseCount(), other.getPraiseCount())
                 && Objects.equals(this.getStatus(), other.getStatus())
+                && Objects.equals(this.getUpdateTime(), other.getUpdateTime())
                 && Objects.equals(this.getUserIcon(), other.getUserIcon())
                 && Objects.equals(this.getUserId(), other.getUserId())
                 && Objects.equals(this.getId(), other.getId());
@@ -110,17 +165,24 @@ public class ContentShare implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getContentId(), this.getCreateTime(), this.getNickName(),
-                this.getStatus(), this.getUserIcon(), this.getUserId(), this.getId());
+        return Objects.hash(this.getComment(), this.getCommentedId(), this.getContentId(),
+                this.getCreateTime(), this.getNickName(), this.getPics(), this.getPraiseCount(),
+                this.getStatus(), this.getUpdateTime(), this.getUserIcon(), this.getUserId(),
+                this.getId());
     }
 
     @Override
     public String toString() {
         return com.google.common.base.MoreObjects.toStringHelper(this)
+                .add("comment", this.getComment())
+                .add("commentedId", this.getCommentedId())
                 .add("contentId", this.getContentId())
                 .add("createTime", this.getCreateTime())
                 .add("nickName", this.getNickName())
+                .add("pics", this.getPics())
+                .add("praiseCount", this.getPraiseCount())
                 .add("status", this.getStatus())
+                .add("updateTime", this.getUpdateTime())
                 .add("userIcon", this.getUserIcon())
                 .add("userId", this.getUserId())
                 .add("id", this.getId())
