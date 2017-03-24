@@ -5,7 +5,9 @@ import java.util.Random;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.mzjf.common.service.models.builders.user.UserBuilder;
 import com.mzjf.common.service.models.content.ContentModel;
+import com.mzjf.common.service.models.user.UserModel;
 
 /**
 * @author niebiaofei
@@ -13,7 +15,7 @@ import com.mzjf.common.service.models.content.ContentModel;
 */
 public class GenerateBuilderUtils {
 
-    private static Random random = new Random(100000000);
+    private static final Random RANDOM = new Random(100000000);
 
     public static <T> void generateBuilder(Class<T> clazz) {
         StringBuilder fieldsString = new StringBuilder();
@@ -44,15 +46,15 @@ public class GenerateBuilderUtils {
                     .append(StringUtils.upperCase(field.getName().charAt(0) + "")
                             + StringUtils.substring(field.getName(), 1)).append("(this.")
                     .append(field.getName()).append(");").append("\n");
-            System.out.print(field.getGenericType().toString());
+//            System.out.print(field.getGenericType().toString());
             if ("class java.lang.Long".equals(field.getGenericType().getTypeName())) {
                 createTestModelString.append("                .").append(field.getName())
-                .append("(").append(random.nextLong())
+                .append("(").append(RANDOM.nextLong())
                 .append(")\n");
             } else {
                 createTestModelString.append("                .").append(field.getName())
-                .append("(").append("nbf")
-                .append(")\n");
+                .append("(\"").append("nbf")
+                .append("\")\n");
             }
         }
 
@@ -68,6 +70,7 @@ public class GenerateBuilderUtils {
         //        for (Class<?> clazz : clazzes) {
         //            generateBuilder(clazz);
         //        }
-        generateBuilder(ContentModel.class);
+//        generateBuilder(UserModel.class);
+        System.out.println(JsonUtils.serialize(UserBuilder.createTestModel()));
     }
 }

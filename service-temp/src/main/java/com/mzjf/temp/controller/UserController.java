@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mzjf.common.service.models.UserModel;
 import com.mzjf.common.service.models.UserSpec;
+import com.mzjf.common.service.models.user.UserModel;
 import com.mzjf.temp.service.TempSerivce;
 
 @RestController

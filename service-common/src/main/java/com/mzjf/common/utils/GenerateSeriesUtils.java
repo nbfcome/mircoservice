@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.mzjf.common.service.entity.content.CommentPraise;
 import com.mzjf.common.service.entity.content.Content;
+import com.mzjf.common.service.models.user.UserModel;
 
 
 /**
@@ -25,11 +26,11 @@ public class GenerateSeriesUtils {
     }
 
     public static void main(String args[]) {
-//        generate(Object.class);
-        List<Class<?>> list = Arrays.asList(CommentPraise.class, Content.class);
-        for (Class<?> clazz : list) {
-            GenerateMapperUtils.generateMapper(clazz);
-            System.out.println("\n\n");
-        }
+        generate(UserModel.class);
+//        List<Class<?>> list = Arrays.asList(CommentPraise.class, Content.class);
+//        for (Class<?> clazz : list) {
+//            GenerateMapperUtils.generateMapper(clazz);
+//            System.out.println("\n\n");
+//        }
     }
 }

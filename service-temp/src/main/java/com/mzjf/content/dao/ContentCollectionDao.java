@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.mzjf.common.service.entity.ContentCollection;
+import com.mzjf.common.service.entity.content.ContentCollection;
 
 /**
  * @author niebiaofei

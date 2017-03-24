@@ -12,7 +12,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.mzjf.common.service.entity.ContentShare;
+import com.mzjf.common.service.entity.content.ContentShare;
+
 
 /**
  * @author niebiaofei
